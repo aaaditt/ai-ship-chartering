@@ -1,0 +1,125 @@
+{
+  "vesselTypes": {
+    "VLCC": {
+      "avgDailyRate": 42000,
+      "rateRange": [30000, 65000],
+      "worldscaleFlat": 8.50,
+      "history": [
+        { "month": "2025-04", "rate": 38000 },
+        { "month": "2025-05", "rate": 35000 },
+        { "month": "2025-06", "rate": 32000 },
+        { "month": "2025-07", "rate": 36000 },
+        { "month": "2025-08", "rate": 40000 },
+        { "month": "2025-09", "rate": 45000 },
+        { "month": "2025-10", "rate": 52000 },
+        { "month": "2025-11", "rate": 55000 },
+        { "month": "2025-12", "rate": 48000 },
+        { "month": "2026-01", "rate": 42000 },
+        { "month": "2026-02", "rate": 44000 },
+        { "month": "2026-03", "rate": 42000 }
+      ]
+    },
+    "Suezmax": {
+      "avgDailyRate": 33000,
+      "rateRange": [22000, 50000],
+      "worldscaleFlat": 6.20,
+      "history": [
+        { "month": "2025-04", "rate": 30000 },
+        { "month": "2025-05", "rate": 28000 },
+        { "month": "2025-06", "rate": 25000 },
+        { "month": "2025-07", "rate": 27000 },
+        { "month": "2025-08", "rate": 32000 },
+        { "month": "2025-09", "rate": 35000 },
+        { "month": "2025-10", "rate": 40000 },
+        { "month": "2025-11", "rate": 42000 },
+        { "month": "2025-12", "rate": 38000 },
+        { "month": "2026-01", "rate": 33000 },
+        { "month": "2026-02", "rate": 35000 },
+        { "month": "2026-03", "rate": 33000 }
+      ]
+    },
+    "Aframax": {
+      "avgDailyRate": 27000,
+      "rateRange": [18000, 42000],
+      "worldscaleFlat": 5.40,
+      "history": [
+        { "month": "2025-04", "rate": 25000 },
+        { "month": "2025-05", "rate": 23000 },
+        { "month": "2025-06", "rate": 21000 },
+        { "month": "2025-07", "rate": 24000 },
+        { "month": "2025-08", "rate": 27000 },
+        { "month": "2025-09", "rate": 30000 },
+        { "month": "2025-10", "rate": 34000 },
+        { "month": "2025-11", "rate": 36000 },
+        { "month": "2025-12", "rate": 32000 },
+        { "month": "2026-01", "rate": 28000 },
+        { "month": "2026-02", "rate": 29000 },
+        { "month": "2026-03", "rate": 27000 }
+      ]
+    },
+    "LR2": {
+      "avgDailyRate": 30000,
+      "rateRange": [20000, 45000],
+      "worldscaleFlat": 5.80,
+      "history": [
+        { "month": "2025-04", "rate": 28000 },
+        { "month": "2025-05", "rate": 26000 },
+        { "month": "2025-06", "rate": 24000 },
+        { "month": "2025-07", "rate": 27000 },
+        { "month": "2025-08", "rate": 30000 },
+        { "month": "2025-09", "rate": 33000 },
+        { "month": "2025-10", "rate": 38000 },
+        { "month": "2025-11", "rate": 40000 },
+        { "month": "2025-12", "rate": 35000 },
+        { "month": "2026-01", "rate": 30000 },
+        { "month": "2026-02", "rate": 32000 },
+        { "month": "2026-03", "rate": 30000 }
+      ]
+    },
+    "LR1": {
+      "avgDailyRate": 22000,
+      "rateRange": [15000, 34000],
+      "worldscaleFlat": 4.50,
+      "history": [
+        { "month": "2025-04", "rate": 20000 },
+        { "month": "2025-05", "rate": 19000 },
+        { "month": "2025-06", "rate": 17000 },
+        { "month": "2025-07", "rate": 19000 },
+        { "month": "2025-08", "rate": 22000 },
+        { "month": "2025-09", "rate": 25000 },
+        { "month": "2025-10", "rate": 28000 },
+        { "month": "2025-11", "rate": 30000 },
+        { "month": "2025-12", "rate": 26000 },
+        { "month": "2026-01", "rate": 22000 },
+        { "month": "2026-02", "rate": 24000 },
+        { "month": "2026-03", "rate": 22000 }
+      ]
+    },
+    "MR": {
+      "avgDailyRate": 18000,
+      "rateRange": [12000, 28000],
+      "worldscaleFlat": 3.80,
+      "history": [
+        { "month": "2025-04", "rate": 16000 },
+        { "month": "2025-05", "rate": 15000 },
+        { "month": "2025-06", "rate": 14000 },
+        { "month": "2025-07", "rate": 16000 },
+        { "month": "2025-08", "rate": 18000 },
+        { "month": "2025-09", "rate": 20000 },
+        { "month": "2025-10", "rate": 23000 },
+        { "month": "2025-11", "rate": 25000 },
+        { "month": "2025-12", "rate": 22000 },
+        { "month": "2026-01", "rate": 18000 },
+        { "month": "2026-02", "rate": 19000 },
+        { "month": "2026-03", "rate": 18000 }
+      ]
+    }
+  },
+  "marketBenchmarks": {
+    "balticDirtyTankerIndex": 1250,
+    "balticCleanTankerIndex": 890,
+    "brentCrudePrice": 78.50,
+    "bunkerFuelPrice": 620,
+    "lastUpdated": "2026-03-15"
+  }
+}
