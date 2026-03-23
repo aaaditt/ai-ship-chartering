@@ -1,0 +1,33 @@
+services:
+  - type: web
+    name: ai-ship-chartering-backend
+    runtime: python
+    rootDir: backend
+    buildCommand: pip install -r requirements.txt
+    # Gunicorn flags:
+    #   --workers 2          : two worker processes (tune up for paid plans)
+    #   --timeout 120        : AI negotiation can take up to 30 s; headroom for retries
+    #   --access-logfile -   : pipe access logs to stdout (visible in Render dashboard)
+    startCommand: gunicorn "app:create_app()" --bind 0.0.0.0:$PORT --workers 2 --timeout 120 --access-logfile -
+    envVars:
+      # ── Required ──────────────────────────────────────────────────────────
+      - key: GEMINI_API_KEY
+        sync: false          # Set in Render dashboard — NEVER commit this value
+
+      # ── CORS ──────────────────────────────────────────────────────────────
+      - key: CORS_ORIGINS
+        sync: false          # e.g. https://ai-ship-chartering.vercel.app
+                             # Multiple: https://app.example.com,https://staging.example.com
+
+      # ── Flask ──────────────────────────────────────────────────────────────
+      - key: FLASK_ENV
+        value: production
+      - key: FLASK_DEBUG
+        value: "0"           # Enforced to 0 in app.py when RENDER env is set
+
+      # ── Rate limiting (optional but recommended) ───────────────────────────
+      # Add a Redis instance from the Render dashboard and it will automatically
+      # set REDIS_URL.  Without it, flask-limiter falls back to in-memory storage
+      # (limits are per-worker, not shared — acceptable for small deployments).
+      - key: REDIS_URL
+        sync: false          # Auto-populated by Render's Redis add-on

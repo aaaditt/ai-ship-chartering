@@ -110,10 +110,43 @@ npm run dev
 ```
 
 ### Environment Variables
-Copy `.env.example` to `backend/.env`:
+Copy `.env.example` comments to `backend/.env` for local development:
 ```env
 GEMINI_API_KEY=your_gemini_api_key_here
+FLASK_ENV=development
+FLASK_DEBUG=1
+PORT=5000
 ```
+
+No frontend `.env` file is needed for local dev — the Vite proxy forwards `/api` to the backend automatically.
+
+---
+
+## 🚀 Deployment
+
+### Backend → Render
+
+1. Push the repo to GitHub.
+2. Create a new **Web Service** on [render.com](https://render.com) and connect the repo.
+3. Render will auto-detect `render.yaml` and configure the service.
+4. Set these **Environment Variables** in the Render dashboard:
+   | Variable | Value |
+   |----------|-------|
+   | `GEMINI_API_KEY` | your Google AI Studio key |
+   | `CORS_ORIGINS` | your Vercel frontend URL (e.g. `https://ai-ship-chartering.vercel.app`) |
+5. Note the service URL (e.g. `https://ai-ship-chartering-backend.onrender.com`).
+
+### Frontend → Vercel
+
+1. Import the repo on [vercel.com](https://vercel.com).
+2. Set **Root Directory** to `frontend`.
+3. Add this **Environment Variable** in the Vercel project settings:
+   | Variable | Value |
+   |----------|-------|
+   | `VITE_API_URL` | your Render backend URL (e.g. `https://ai-ship-chartering-backend.onrender.com`) |
+4. Deploy — the build command `vite build` runs automatically.
+
+> **Note:** After deploying the frontend, go back to Render and update `CORS_ORIGINS` to the final Vercel URL, then redeploy the backend.
 
 ---
 

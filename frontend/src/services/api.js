@@ -1,10 +1,18 @@
 /**
  * API Service Layer
  * Handles all communication with the Flask backend
+ *
+ * In development: Vite proxy forwards /api → http://localhost:5000
+ * In production:  VITE_API_URL points to the Render backend, e.g.
+ *                 https://ai-ship-chartering-backend.onrender.com
  */
 import axios from 'axios';
 
-const API_BASE = '/api';
+// Use the env variable when available (set in .env.production / Vercel env settings).
+// Falls back to '/api' which is handled by the Vite proxy in local dev.
+const API_BASE = import.meta.env.VITE_API_URL
+  ? `${import.meta.env.VITE_API_URL}/api`
+  : '/api';
 
 const api = axios.create({
   baseURL: API_BASE,

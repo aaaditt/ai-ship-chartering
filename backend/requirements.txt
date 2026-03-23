@@ -1,5 +1,9 @@
 flask==3.1.0
 flask-cors==5.0.1
+flask-limiter==3.9.0
 python-dotenv==1.1.0
 google-generativeai==0.8.5
 gunicorn==23.0.0
+# Redis client — only needed if REDIS_URL is set in production
+# Render's Redis add-on uses the redis:// scheme
+redis==5.2.1
